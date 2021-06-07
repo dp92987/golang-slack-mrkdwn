@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/mattn/godown"
+	"github.com/dp92987/golang-slack-mrkdwn"
 )
 
 var (

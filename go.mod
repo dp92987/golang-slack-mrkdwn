@@ -1,4 +1,4 @@
-module github.com/mattn/godown
+module github.com/dp92987/golang-slack-mrkdwn
 
 go 1.14
 
