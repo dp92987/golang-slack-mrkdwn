@@ -307,14 +307,14 @@ func walk(node *html.Node, w io.Writer, nest int, option *Option) {
 				// Links are invalid in markdown if the link text extends beyond a single line
 				// So we render the contents and strip any spaces
 				href := attr(c, "href")
-				end := fmt.Sprintf("](%s)", href)
+				end := fmt.Sprintf("%s>", href)
 				title := attr(c, "title")
 				if title != "" {
-					end = fmt.Sprintf("](%s %q)", href, title)
+					end = fmt.Sprintf("%s|%q>", href, title)
 				}
-				aroundNonWhitespace(c, w, nest, option, "[", end)
+				aroundNonWhitespace(c, w, nest, option, "<", end)
 			case "b", "strong":
-				aroundNonWhitespace(c, w, nest, option, "**", "**")
+				aroundNonWhitespace(c, w, nest, option, "*", "*")
 			case "i", "em":
 				aroundNonWhitespace(c, w, nest, option, "_", "_")
 			case "del", "s":
